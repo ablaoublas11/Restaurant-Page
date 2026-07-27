@@ -1,4 +1,5 @@
 import "./style.css";
+import {menuSearch} from "./scripts/foodRequest";
 
 // import {greekDishes} from "./scripts/menu";
 
@@ -44,9 +45,10 @@ const app = {
           service.`;
         node.append(h1, paragraph);
     },
-    renderMenu(){
+    async renderMenu(){
         //alert("hi menu");
         this.elements.contentSection.innerHTML="";
+        const data = await menuSearch();
     },
     renderAbout(){
         //alert("hi about");
