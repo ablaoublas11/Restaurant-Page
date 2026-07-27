@@ -6,9 +6,12 @@ import "./style.css";
 
 const app = {
     elements:{
-        navMenu: document.querySelector(".header .nav .menu")
+        navMenu: document.querySelector(".header .nav .menu"),
+        contentSection: document.querySelector(".main .section")
     },
     init(){
+        //default εμφάνιση του περιεχοενου που είναι στην σελίδα home
+        this.renderHome();
         //προσθήκη eventListener σε όλα τα κουμπιά του menu
         this.elements.navMenu.addEventListener("click" , (event) => {
             const target = event.target.dataset.view;
@@ -30,16 +33,28 @@ const app = {
         });
     },
     renderHome(){
-        alert("hi home");
+        //alert("hi home");
+        this.elements.contentSection.innerHTML="";
+        const node = this.elements.contentSection;
+
+        const h1 = document.createElement("h1");
+        h1.textContent = "Welcome to Chris's Restaurant";
+        const paragraph = document.createElement("p");
+        paragraph.textContent = `Experience the finest dining with our exquisite menu and exceptional
+          service.`;
+        node.append(h1, paragraph);
     },
     renderMenu(){
-        alert("hi menu");
+        //alert("hi menu");
+        this.elements.contentSection.innerHTML="";
     },
     renderAbout(){
-        alert("hi about");
+        //alert("hi about");
+        this.elements.contentSection.innerHTML="";
     },
     renderContact(){
-        alert("hi contact");
+        //alert("hi contact");
+        this.elements.contentSection.innerHTML="";
     }
 }
 
