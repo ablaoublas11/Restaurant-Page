@@ -1,9 +1,5 @@
 import "./style.css";
-import {menuSearch} from "./scripts/foodRequest";
-
-// import {greekDishes} from "./scripts/menu";
-
-// console.log(greekDishes);
+import {renderMenu} from "./scripts/renderMenu";
 
 const app = {
     elements:{
@@ -45,10 +41,9 @@ const app = {
           service.`;
         node.append(h1, paragraph);
     },
-    async renderMenu(){
-        //alert("hi menu");
+    renderMenu(){
         this.elements.contentSection.innerHTML="";
-        const data = await menuSearch();
+        this.elements.contentSection.appendChild(renderMenu());
     },
     renderAbout(){
         //alert("hi about");
