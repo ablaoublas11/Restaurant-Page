@@ -32,7 +32,7 @@ body {
   flex-direction: column; /* Τα στοιχεία σε στήλη */
   padding: 0; /* Εσωτερικό κενό γύρω από το περιεχόμενο */
 }
-.header {
+/* .header {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -60,7 +60,7 @@ body {
   /* display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: end; */
+  justify-content: end; 
 }
 .menu {
   width: 100%;
@@ -82,7 +82,122 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 1rem;
+} */
+
+/* Header css */
+
+.header {
+  background: linear-gradient(160deg, var(--bg-header) 0%, #241a0c 100%);
+  border-bottom: 1px solid rgba(245, 166, 35, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  isolation: isolate;
+  overflow: hidden;
+  
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    0 8px 24px rgba(0, 0, 0, 0.25);
 }
+
+/* Απαλό glow φωτισμού πάνω δεξιά — ίδια λογική με την κάρτα του μενού */
+.header::after {
+  content: "";
+  position: absolute;
+  top: -60%;
+  right: 10%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(245, 166, 35, 0.1) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.1rem 2rem;
+}
+
+.logo h1 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0;
+  background: linear-gradient(135deg, var(--text-inverse) 30%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu button {
+  position: relative;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-inverse);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  opacity: 0.75;
+  
+  transition:
+    opacity 0.3s ease,
+    color 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.menu button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.menu button:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  background-color: rgba(245, 166, 35, 0.1);
+}
+
+.menu button:active {
+  transform: translateY(0);
+}
+
+/* Ενεργό/επιλεγμένο view */
+.menu button[data-active="true"] {
+  opacity: 1;
+  color: var(--text-inverse);
+  box-shadow: 0 4px 14px rgba(212, 87, 10, 0.4);
+}
+
+.menu button[data-active="true"]::before {
+  opacity: 1;
+}
+
+/* ---------------------------------------------- */
+
 
 .main {
   flex: 1; /* Καταλαμβάνει όλο τον διαθέσιμο χώρο */
@@ -94,6 +209,145 @@ body {
   align-items: center;
   padding: 20px;
 }
+.section{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuContent{
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* Καρτέλες του κάθε φαγητού στο μενού*/
+
+.menuItem {
+  --shadow-color: 26, 18, 8;
+  
+  background: linear-gradient(160deg, var(--bg-surface) 0%, #fdfbf8 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.75rem 1.75rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  
+  box-shadow:
+    0 1px 2px rgba(var(--shadow-color), 0.06),
+    0 4px 8px rgba(var(--shadow-color), 0.06),
+    0 12px 24px rgba(var(--shadow-color), 0.05);
+  
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.35s ease;
+}
+
+/* Λεπτή γραμμή-λωρίδα αριστερά */
+.menuItem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-accent), var(--color-primary));
+  z-index: 1;
+}
+
+/* Απαλή, μεγάλη "glow" κηλίδα στο background — δίνει βάθος χωρίς να ενοχλεί */
+.menuItem::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -30%;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(245, 166, 35, 0.12) 0%, transparent 70%);
+  z-index: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  opacity: 0.6;
+}
+
+.menuItem:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: var(--color-primary);
+  box-shadow:
+    0 2px 4px rgba(var(--shadow-color), 0.08),
+    0 8px 16px rgba(var(--shadow-color), 0.08),
+    0 24px 40px rgba(var(--shadow-color), 0.12),
+    0 0 0 1px rgba(212, 87, 10, 0.08);
+}
+
+.menuItem:hover::after {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.menuItem > * {
+  position: relative;
+  z-index: 2;
+}
+
+.menuItem h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.menuItem h4 {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-inverse);
+  background: linear-gradient(135deg, var(--color-accent), #e0910f);
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  margin: 0 0 1rem;
+  box-shadow: 0 2px 6px rgba(245, 166, 35, 0.35);
+}
+
+.menuItem p:first-of-type {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin: 0 0 1.25rem;
+}
+
+.menuItem p:last-of-type {
+  display: inline-flex;
+  align-items: baseline;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin: 0;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(44, 31, 14, 0.15);
+  width: 100%;
+}
+
+.menuItem p:last-of-type::before {
+  content: "€";
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-right: 3px;
+}
+
+/* ---------------------------------------------------------- */
 
 .footer {
   background-color: var(--bg-footer);
