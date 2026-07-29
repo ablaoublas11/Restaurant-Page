@@ -32,13 +32,13 @@ body {
   flex-direction: column; /* Τα στοιχεία σε στήλη */
   padding: 0; /* Εσωτερικό κενό γύρω από το περιεχόμενο */
 
-  /* background-image:
+   background-image:
     linear-gradient(180deg, rgba(26, 18, 8, 0.55) 0%, rgba(26, 18, 8, 0.75) 100%),
-    url('/images/restaurant-bg.jpg');  βάλε εδώ το path της φωτογραφίας σου 
+     url('./assets/images/restaurant-bg.jpg');  /*βάλε εδώ το path της φωτογραφίας σου  */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; η εικόνα μένει σταθερή καθώς κάνεις scroll */
+  background-attachment: fixed; /*η εικόνα μένει σταθερή καθώς κάνεις scroll */
 }
 /* .header {
   width: 100%;
@@ -106,6 +106,10 @@ body {
   box-shadow:
     0 1px 2px rgba(0, 0, 0, 0.2),
     0 8px 24px rgba(0, 0, 0, 0.25);
+
+  background: linear-gradient(160deg, rgba(26, 18, 8, 0.75) 0%, rgba(36, 26, 12, 0.75) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 /* Απαλό glow φωτισμού πάνω δεξιά — ίδια λογική με την κάρτα του μενού */
@@ -223,6 +227,16 @@ body {
   text-align: center;
   
   background: linear-gradient(180deg, var(--bg-page) 0%, var(--bg-surface) 100%);
+
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 20px;
+  margin-top: 3rem;
+  box-shadow:
+    0 8px 24px rgba(26, 18, 8, 0.15),
+    0 24px 48px rgba(26, 18, 8, 0.1);
+  /* αφαίρεσε ή κράτα το ::before glow όπως ήταν */
 }
 
 /* Glow στο βάθος — ίδια λογική με header/κάρτα */

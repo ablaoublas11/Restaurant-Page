@@ -34,7 +34,7 @@ const app = {
          this.elements.contentSection.innerHTML="";
         // const node = this.elements.contentSection;
 
-        const content = `<section class="section">
+        const content = `
   <span class="section-badge">Από το 1998 στην καρδιά της πόλης</span>
   
   <h1>Welcome to Chris's Restaurant</h1>
@@ -67,7 +67,7 @@ const app = {
       <span class="stat-label">Βαθμολογία Πελατών</span>
     </div>
   </div>
-</section>`;
+`;
 
 this.elements.contentSection.insertAdjacentHTML("beforeend", content);
         // const h1 = document.createElement("h1");
