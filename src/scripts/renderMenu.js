@@ -1,6 +1,10 @@
 import {greekDishes} from "./menu";
 
 export const renderMenu = () => {
+    //αποθηκεύουμε τα πιάτα αφού τα έχουμε ομαδοποιήσει
+    const groupedDishes = groupingDishes(greekDishes);
+    console.log(groupedDishes);
+
     const node = document.createElement("div");
     node.className = "menuContent";
 
@@ -18,6 +22,18 @@ export const renderMenu = () => {
         node.append(childNode);
     });
     return node;
+}
+
+const groupingDishes = (menuDishes) => {
+    const newDishes = menuDishes.reduce((acc, cur) => {
+        if(!acc[cur.category]){
+           acc[cur.category] = []; 
+        }
+           
+        acc[cur.category].push(cur);
+        return acc;
+    },{});
+    return newDishes;
 }
 
 const createMenuItem = (foodItem) => {
