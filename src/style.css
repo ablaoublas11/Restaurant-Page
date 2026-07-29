@@ -378,7 +378,7 @@ body {
 
 .main {
   flex: 1; /* Καταλαμβάνει όλο τον διαθέσιμο χώρο */
-  background-color: var(--bg-surface);
+  background-color: rgba(255, 255, 255, 0.2); /* π.χ. 20% αδιαφάνεια αντί για συμπαγές λευκό */
   width: 100%;
   /* max-width: 1000px; */
   display: flex;
