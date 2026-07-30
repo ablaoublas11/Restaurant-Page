@@ -1,5 +1,107 @@
 export const greekDishes = [
   {
+    name: "Σπανακόπιτα",
+    description: "Φύλλο κρούστας γεμιστό με σπανάκι και φέτα.",
+    image: "images/spanakopita.jpg",
+    price: 3.2,
+    category: "Πίτα",
+  },
+  {
+    name: "Τυρόπιτα",
+    description: "Φύλλο κρούστας γεμιστό με μείγμα τυριών.",
+    image: "images/tyropita.jpg",
+    price: 3.0,
+    category: "Πίτα",
+  },
+  {
+    name: "Χωριάτικη Σαλάτα",
+    description:
+      "Ντομάτα, αγγούρι, κρεμμύδι, πιπεριά, ελιές και φέτα με ελαιόλαδο.",
+    image: "images/xoriatiki.jpg",
+    price: 6.0,
+    category: "Σαλάτα",
+  },
+  {
+    name: "Τζατζίκι",
+    description: "Κρεμώδης σάλτσα από γιαούρτι, αγγούρι, σκόρδο και ελαιόλαδο.",
+    image: "images/tzatziki.jpg",
+    price: 3.0,
+    category: "Ορεκτικό",
+  },
+  {
+    name: "Ντολμαδάκια Γιαλαντζί",
+    description:
+      "Αμπελόφυλλα γεμιστά με ρύζι και μυρωδικά, σερβιρισμένα με λεμόνι.",
+    image: "images/dolmadakia.jpg",
+    price: 6.5,
+    category: "Ορεκτικό",
+  },
+  {
+    name: "Μελιτζανοσαλάτα",
+    description: "Πουρές από ψητή μελιτζάνα με σκόρδο, ελαιόλαδο και λεμόνι.",
+    image: "images/melitzanosalata.jpg",
+    price: 4.0,
+    category: "Ορεκτικό",
+  },
+  {
+    name: "Κεφτεδάκια",
+    description: "Τηγανητοί μπιφτεκάκια με κιμά, ψωμί και μυρωδικά.",
+    image: "images/keftedes.jpg",
+    price: 6.8,
+    category: "Ορεκτικό",
+  },
+  {
+    name: "Φάβα Σαντορίνης",
+    description:
+      "Πουρές από κίτρινα αρακά, σερβιρισμένος με κρεμμύδι και ελαιόλαδο.",
+    image: "images/fava.jpg",
+    price: 5.5,
+    category: "Ορεκτικό",
+  },
+  {
+    name: "Φασολάδα",
+    description: "Παραδοσιακή σούπα φασολιών με λαχανικά και ελαιόλαδο.",
+    image: "images/fasolada.jpg",
+    price: 5.5,
+    category: "Σούπα",
+  },
+  {
+    name: "Κοτόσουπα Αυγολέμονο",
+    description: "Παραδοσιακή σούπα κοτόπουλου με ρύζι και αυγολέμονο.",
+    image: "images/avgolemono.jpg",
+    price: 6.0,
+    category: "Σούπα",
+  },
+  {
+    name: "Χταποδάκι Σχάρας",
+    description: "Ψητό χταπόδι στη σχάρα με λαδολέμονο.",
+    image: "images/xtapodi.jpg",
+    price: 12.0,
+    category: "Θαλασσινά",
+  },
+  {
+    name: "Καλαμαράκια Τηγανιτά",
+    description:
+      "Καλαμάρια κομμένα σε ροδέλες, τηγανισμένα σε τραγανό κουρκούτι.",
+    image: "images/kalamarakia.jpg",
+    price: 9.0,
+    category: "Θαλασσινά",
+  },
+  {
+    name: "Μπακαλιάρος Σκορδαλιά",
+    description: "Τηγανητός μπακαλιάρος με σκορδαλιά πατάτας.",
+    image: "images/bakaliaros-skordalia.jpg",
+    price: 8.5,
+    category: "Θαλασσινά",
+  },
+  {
+    name: "Γαρίδες Σαγανάκι",
+    description: "Γαρίδες σοταρισμένες σε σάλτσα ντομάτας με φέτα.",
+    image: "images/garides-saganaki.jpg",
+    price: 11.0,
+    category: "Θαλασσινά",
+  },
+  {
     name: "Μουσακάς",
     description:
       "Στρώσεις πατάτας, μελιτζάνας και κιμά με μπεσαμέλ, ψημένος στο φούρνο.",
@@ -30,70 +132,12 @@ export const greekDishes = [
     category: "Κυρίως Πιάτο",
   },
   {
-    name: "Τζατζίκι",
-    description: "Κρεμώδης σάλτσα από γιαούρτι, αγγούρι, σκόρδο και ελαιόλαδο.",
-    image: "images/tzatziki.jpg",
-    price: 3.0,
-    category: "Ορεκτικό",
-  },
-  {
-    name: "Ντολμαδάκια Γιαλαντζί",
-    description:
-      "Αμπελόφυλλα γεμιστά με ρύζι και μυρωδικά, σερβιρισμένα με λεμόνι.",
-    image: "images/dolmadakia.jpg",
-    price: 6.5,
-    category: "Ορεκτικό",
-  },
-  {
-    name: "Σπανακόπιτα",
-    description: "Φύλλο κρούστας γεμιστό με σπανάκι και φέτα.",
-    image: "images/spanakopita.jpg",
-    price: 3.2,
-    category: "Πίτα",
-  },
-  {
-    name: "Τυρόπιτα",
-    description: "Φύλλο κρούστας γεμιστό με μείγμα τυριών.",
-    image: "images/tyropita.jpg",
-    price: 3.0,
-    category: "Πίτα",
-  },
-  {
     name: "Γεμιστά",
     description:
       "Ντομάτες και πιπεριές γεμιστές με ρύζι και μυρωδικά, ψημένες στο φούρνο.",
     image: "images/gemista.jpg",
     price: 7.5,
     category: "Κυρίως Πιάτο",
-  },
-  {
-    name: "Φασολάδα",
-    description: "Παραδοσιακή σούπα φασολιών με λαχανικά και ελαιόλαδο.",
-    image: "images/fasolada.jpg",
-    price: 5.5,
-    category: "Σούπα",
-  },
-  {
-    name: "Χωριάτικη Σαλάτα",
-    description:
-      "Ντομάτα, αγγούρι, κρεμμύδι, πιπεριά, ελιές και φέτα με ελαιόλαδο.",
-    image: "images/xoriatiki.jpg",
-    price: 6.0,
-    category: "Σαλάτα",
-  },
-  {
-    name: "Μελιτζανοσαλάτα",
-    description: "Πουρές από ψητή μελιτζάνα με σκόρδο, ελαιόλαδο και λεμόνι.",
-    image: "images/melitzanosalata.jpg",
-    price: 4.0,
-    category: "Ορεκτικό",
-  },
-  {
-    name: "Κεφτεδάκια",
-    description: "Τηγανητοί μπιφτεκάκια με κιμά, ψωμί και μυρωδικά.",
-    image: "images/keftedes.jpg",
-    price: 6.8,
-    category: "Ορεκτικό",
   },
   {
     name: "Μπριάμ",
@@ -103,29 +147,6 @@ export const greekDishes = [
     category: "Κυρίως Πιάτο",
   },
   {
-    name: "Φάβα Σαντορίνης",
-    description:
-      "Πουρές από κίτρινα αρακά, σερβιρισμένος με κρεμμύδι και ελαιόλαδο.",
-    image: "images/fava.jpg",
-    price: 5.5,
-    category: "Ορεκτικό",
-  },
-  {
-    name: "Χταποδάκι Σχάρας",
-    description: "Ψητό χταπόδι στη σχάρα με λαδολέμονο.",
-    image: "images/xtapodi.jpg",
-    price: 12.0,
-    category: "Θαλασσινά",
-  },
-  {
-    name: "Καλαμαράκια Τηγανιτά",
-    description:
-      "Καλαμάρια κομμένα σε ροδέλες, τηγανισμένα σε τραγανό κουρκούτι.",
-    image: "images/kalamarakia.jpg",
-    price: 9.0,
-    category: "Θαλασσινά",
-  },
-  {
     name: "Κοτόπουλο Λεμονάτο",
     description: "Ψητό κοτόπουλο με πατάτες, λεμόνι, ρίγανη και ελαιόλαδο.",
     image: "images/kotopoulo-lemonato.jpg",
@@ -133,32 +154,11 @@ export const greekDishes = [
     category: "Κυρίως Πιάτο",
   },
   {
-    name: "Κοτόσουπα Αυγολέμονο",
-    description: "Παραδοσιακή σούπα κοτόπουλου με ρύζι και αυγολέμονο.",
-    image: "images/avgolemono.jpg",
-    price: 6.0,
-    category: "Σούπα",
-  },
-  {
     name: "Λαχανοντολμάδες",
     description: "Λάχανο γεμιστό με κιμά και ρύζι, σε σάλτσα αυγολέμονο.",
     image: "images/lahanontolmades.jpg",
     price: 7.0,
     category: "Κυρίως Πιάτο",
-  },
-  {
-    name: "Μπακαλιάρος Σκορδαλιά",
-    description: "Τηγανητός μπακαλιάρος με σκορδαλιά πατάτας.",
-    image: "images/bakaliaros-skordalia.jpg",
-    price: 8.5,
-    category: "Θαλασσινά",
-  },
-  {
-    name: "Γαρίδες Σαγανάκι",
-    description: "Γαρίδες σοταρισμένες σε σάλτσα ντομάτας με φέτα.",
-    image: "images/garides-saganaki.jpg",
-    price: 11.0,
-    category: "Θαλασσινά",
   },
   {
     name: "Στιφάδο",

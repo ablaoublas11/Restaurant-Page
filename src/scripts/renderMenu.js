@@ -36,10 +36,6 @@ const groupingDishes = (menuDishes) => {
     return newDishes;
 }
 
-const createMenuItem = (foodItem) => {
+// const createMenuItem = (foodItem) => {}
 
-}
-
-const nextMenuItems = (remainItems) => {
-
-}
+// const nextMenuItems = (remainItems) => {}
