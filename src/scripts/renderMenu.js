@@ -4,12 +4,18 @@ export const renderMenu = () => {
     //αποθηκεύουμε τα πιάτα αφού τα έχουμε ομαδοποιήσει
     const groupedDishes = groupingDishes(greekDishes);
     console.log(groupedDishes.length);
-    //Δημιουργία της βάσης του δέντρου του μενού
+    //Δημιουργία της βάσης του δέντρου του μενού. Είναι το γενικό div μέσα στο section
     const node = document.createElement("div");
     node.className = "menuContent";
 
     Object.entries(groupedDishes).forEach(([categoryName, dishesArray]) => {
-        //alert("hi");
+        //Δημιουργία καρτελών ανά κατηγορία πιάτων
+        const menuItemTab = document.createElement("div");
+        menuItemTab.className = "categoryTabMenu";
+        const categoryTitle = document.createElement("h4");
+        categoryTitle.className = "categoryTitle";
+        categoryTitle.textContent = categoryName;
+        node.append(categoryTitle);
         dishesArray.forEach((element) => {
             const childNode = document.createElement("div");
             childNode.className = "menuItem";
@@ -21,9 +27,9 @@ export const renderMenu = () => {
                 <p>${element.price}</p>
             `;
             childNode.insertAdjacentHTML("beforeend", childItem);
-            node.append(childNode);
-            console.log(element);
+            menuItemTab.append(childNode);
         });
+        node.append(menuItemTab);
     });
     return node;
 }
