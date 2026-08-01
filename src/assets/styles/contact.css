@@ -1,0 +1,131 @@
+/* ---------------------------Contact Page Styling */
+
+.contact {
+  position: relative;
+  isolation: isolate;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact h1 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-heading);
+  margin: 0 0 1rem;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+  text-align: left;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed rgba(44, 31, 14, 0.15);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  background: rgba(212, 87, 10, 0.1);
+}
+
+.info-item h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0 0 0.25rem;
+}
+
+.info-item p {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.contact-form {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+
+  box-shadow:
+    0 1px 2px rgba(26, 18, 8, 0.06),
+    0 4px 8px rgba(26, 18, 8, 0.06),
+    0 12px 24px rgba(26, 18, 8, 0.05);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-heading);
+  background: var(--bg-page);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  box-sizing: border-box;
+  resize: vertical;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(212, 87, 10, 0.12);
+}
+
+.contact-form .btn-primary {
+  width: 100%;
+  border: none;
+}
+
+/* @media (min-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr 1.1fr;
+    align-items: start;
+  }
+} */
+
+/* ---------------------------------------------------------- */

@@ -1,0 +1,175 @@
+.menuContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+.categoryTabMenu {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+/* Διαχωριστική γραμμή πάνω από κάθε κατηγορία, εκτός της πρώτης */
+.categoryTabMenu:not(:first-child) {
+  border-top: 1px dashed rgba(44, 31, 14, 0.15);
+  padding-top: 2.5rem;
+}
+
+.categoryTitle {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  letter-spacing: -0.01em;
+  margin: 0 0 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.categoryTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
+
+/* Καρτέλες του κάθε φαγητού στο μενού*/
+
+.menuItem {
+  --shadow-color: 26, 18, 8;
+
+  background: linear-gradient(160deg, var(--bg-surface) 0%, #fdfbf8 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.75rem 1.75rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  box-shadow:
+    0 1px 2px rgba(var(--shadow-color), 0.06),
+    0 4px 8px rgba(var(--shadow-color), 0.06),
+    0 12px 24px rgba(var(--shadow-color), 0.05);
+
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.35s ease;
+}
+
+/* Λεπτή γραμμή-λωρίδα αριστερά */
+.menuItem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--color-accent),
+    var(--color-primary)
+  );
+  z-index: 1;
+}
+
+/* Απαλή, μεγάλη "glow" κηλίδα στο background — δίνει βάθος χωρίς να ενοχλεί */
+.menuItem::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -30%;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(
+    circle,
+    rgba(245, 166, 35, 0.12) 0%,
+    transparent 70%
+  );
+  z-index: 0;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+  opacity: 0.6;
+}
+
+.menuItem:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: var(--color-primary);
+  box-shadow:
+    0 2px 4px rgba(var(--shadow-color), 0.08),
+    0 8px 16px rgba(var(--shadow-color), 0.08),
+    0 24px 40px rgba(var(--shadow-color), 0.12),
+    0 0 0 1px rgba(212, 87, 10, 0.08);
+}
+
+.menuItem:hover::after {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.menuItem > * {
+  position: relative;
+  z-index: 2;
+}
+
+.menuItem h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.menuItem h4 {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-inverse);
+  background: linear-gradient(135deg, var(--color-accent), #e0910f);
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  margin: 0 0 1rem;
+  box-shadow: 0 2px 6px rgba(245, 166, 35, 0.35);
+}
+
+.menuItem p:first-of-type {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin: 0 0 1.25rem;
+}
+
+.menuItem p:last-of-type {
+  display: inline-flex;
+  align-items: baseline;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin: 0;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(44, 31, 14, 0.15);
+  width: 100%;
+}
+
+.menuItem p:last-of-type::before {
+  content: "€";
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-right: 3px;
+}
+
+/* ---------------------------------------------------------- */
