@@ -177,3 +177,32 @@
 }
 
 /*------------------------------------------------*/
+
+@media screen and (max-width: 1080px) {
+  .section {
+    padding: 4rem 2rem 3.5rem;
+  }
+  .section-stats {
+    gap: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 3rem 1.25rem;
+  }
+  .section-actions {
+    flex-direction: column;
+  }
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 320px;
+  }
+  .section-stats {
+    gap: 1.5rem;
+    row-gap: 1.25rem;
+  }
+  .stat-number {
+    font-size: 1.5rem;
+  }
+}

@@ -129,3 +129,20 @@
 } */
 
 /* ---------------------------------------------------------- */
+@media screen and (max-width: 1080px) {
+  .contact-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contact {
+    padding: 3.5rem 1.25rem;
+  }
+  .contact-content {
+    grid-template-columns: 1fr; /* info πάνω, form κάτω */
+  }
+  .contact-form {
+    padding: 1.5rem;
+  }
+}

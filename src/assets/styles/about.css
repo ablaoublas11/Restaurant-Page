@@ -115,13 +115,21 @@
   margin: 0;
 }
 
-/* @media (min-width: 768px) {
+/* ---------------------------------------------------------- */
+
+@media screen and (max-width: 1080px) {
   .about-content {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
+    grid-template-columns: 1fr; /* text πάνω, features κάτω, full width */
   }
   .about-features {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr); /* τα 3 feature cards σε σειρά */
   }
-} */
-/* ---------------------------------------------------------- */
+}
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 3.5rem 1.25rem;
+  }
+  .about-features {
+    grid-template-columns: 1fr; /* πίσω σε κάθετη στοίβα */
+  }
+}
