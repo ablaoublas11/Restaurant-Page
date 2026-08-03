@@ -1,8 +1,10 @@
+import spanakopita from "../assets/images/foods/spanakopita.jpg"
+
 export const greekDishes = [
   {
     name: "Σπανακόπιτα",
     description: "Φύλλο κρούστας γεμιστό με σπανάκι και φέτα.",
-    image: "images/spanakopita.jpg",
+    image: spanakopita,
     price: 3.2,
     category: "Πίτα",
   },

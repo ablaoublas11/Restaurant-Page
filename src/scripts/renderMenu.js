@@ -23,6 +23,7 @@ export const renderMenu = () => {
             const childItem = `
                 <h3>${element.name}</h3>
                 <h4>${element.category}</h4>
+                <img src="${element.image}" alt="Σπανακοπιτα της γιαγιάς!">
                 <p>${element.description}</p>
                 <p>${element.price}</p>
             `;
