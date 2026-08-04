@@ -1,17 +1,31 @@
-import spanakopita from "../assets/images/foods/spanakopita.jpg"
+//import spanakopita from "../assets/images/foods/spanakopita.jpg"
+// data/menu.js
+const imagesContext = import.meta.webpackContext("../assets/images/foods", {
+  recursive: false,
+  regExp: /\.(png|jpe?g|gif)$/,
+});
+
+// Δημιουργεί ένα "χάρτη" ονόματος αρχείου -> import
+const images = {};
+imagesContext.keys().forEach((key) => {
+  // key είναι κάτι σαν "./spanakopita.jpg"
+  const fileName = key.replace("./", "");
+  images[fileName] = imagesContext(key);
+});
+
 
 export const greekDishes = [
   {
     name: "Σπανακόπιτα",
     description: "Φύλλο κρούστας γεμιστό με σπανάκι και φέτα.",
-    image: spanakopita,
+    image: images["spanakopita.jpg"],
     price: 3.2,
     category: "Πίτα",
   },
   {
     name: "Τυρόπιτα",
     description: "Φύλλο κρούστας γεμιστό με μείγμα τυριών.",
-    image: "images/tyropita.jpg",
+    image: images["spanakopita.jpg"],
     price: 3.0,
     category: "Πίτα",
   },
@@ -19,14 +33,14 @@ export const greekDishes = [
     name: "Χωριάτικη Σαλάτα",
     description:
       "Ντομάτα, αγγούρι, κρεμμύδι, πιπεριά, ελιές και φέτα με ελαιόλαδο.",
-    image: "images/xoriatiki.jpg",
+    image: images["spanakopita.jpg"],
     price: 6.0,
     category: "Σαλάτα",
   },
   {
     name: "Τζατζίκι",
     description: "Κρεμώδης σάλτσα από γιαούρτι, αγγούρι, σκόρδο και ελαιόλαδο.",
-    image: "images/tzatziki.jpg",
+    image: images["spanakopita.jpg"],
     price: 3.0,
     category: "Ορεκτικό",
   },
@@ -34,21 +48,21 @@ export const greekDishes = [
     name: "Ντολμαδάκια Γιαλαντζί",
     description:
       "Αμπελόφυλλα γεμιστά με ρύζι και μυρωδικά, σερβιρισμένα με λεμόνι.",
-    image: "images/dolmadakia.jpg",
+    image: images["spanakopita.jpg"],
     price: 6.5,
     category: "Ορεκτικό",
   },
   {
     name: "Μελιτζανοσαλάτα",
     description: "Πουρές από ψητή μελιτζάνα με σκόρδο, ελαιόλαδο και λεμόνι.",
-    image: "images/melitzanosalata.jpg",
+    image: images["spanakopita.jpg"],
     price: 4.0,
     category: "Ορεκτικό",
   },
   {
     name: "Κεφτεδάκια",
     description: "Τηγανητοί μπιφτεκάκια με κιμά, ψωμί και μυρωδικά.",
-    image: "images/keftedes.jpg",
+    image: images["spanakopita.jpg"],
     price: 6.8,
     category: "Ορεκτικό",
   },
@@ -56,28 +70,28 @@ export const greekDishes = [
     name: "Φάβα Σαντορίνης",
     description:
       "Πουρές από κίτρινα αρακά, σερβιρισμένος με κρεμμύδι και ελαιόλαδο.",
-    image: "images/fava.jpg",
+    image: images["spanakopita.jpg"],
     price: 5.5,
     category: "Ορεκτικό",
   },
   {
     name: "Φασολάδα",
     description: "Παραδοσιακή σούπα φασολιών με λαχανικά και ελαιόλαδο.",
-    image: "images/fasolada.jpg",
+    image: images["spanakopita.jpg"],
     price: 5.5,
     category: "Σούπα",
   },
   {
     name: "Κοτόσουπα Αυγολέμονο",
     description: "Παραδοσιακή σούπα κοτόπουλου με ρύζι και αυγολέμονο.",
-    image: "images/avgolemono.jpg",
+    image: images["spanakopita.jpg"],
     price: 6.0,
     category: "Σούπα",
   },
   {
     name: "Χταποδάκι Σχάρας",
     description: "Ψητό χταπόδι στη σχάρα με λαδολέμονο.",
-    image: "images/xtapodi.jpg",
+    image: images["spanakopita.jpg"],
     price: 12.0,
     category: "Θαλασσινά",
   },
@@ -85,14 +99,14 @@ export const greekDishes = [
     name: "Καλαμαράκια Τηγανιτά",
     description:
       "Καλαμάρια κομμένα σε ροδέλες, τηγανισμένα σε τραγανό κουρκούτι.",
-    image: "images/kalamarakia.jpg",
+    image: images["spanakopita.jpg"],
     price: 9.0,
     category: "Θαλασσινά",
   },
   {
     name: "Μπακαλιάρος Σκορδαλιά",
     description: "Τηγανητός μπακαλιάρος με σκορδαλιά πατάτας.",
-    image: "images/bakaliaros-skordalia.jpg",
+    image: images["spanakopita.jpg"],
     price: 8.5,
     category: "Θαλασσινά",
   },
