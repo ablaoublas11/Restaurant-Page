@@ -27,6 +27,17 @@ const app = {
         this.renderContact();
       }
     });
+
+    //Νέο listener για να πιάσουμε το button που ειναι στο home page
+    this.elements.contentSection.addEventListener("click" , (event) => {
+      //εδώ βρίσκουμε το κοντινότερο Button και το ελέγχουμε εάν έχει δημιουργηθεί
+      const button = event.target.closest("button[data-view]");
+      if(!button) return;
+
+      const view = button.dataset.view;
+      if (view === "menu") this.renderMenu();
+      else if (view === "contact") this.renderContact();
+    });
   },
   renderHome() {
     this.elements.contentSection.innerHTML = "";
