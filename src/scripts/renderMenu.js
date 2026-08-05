@@ -1,4 +1,5 @@
 import {greekDishes} from "./menu";
+import images from "./imageContext.js";
 
 export const renderMenu = () => {
     //αποθηκεύουμε τα πιάτα αφού τα έχουμε ομαδοποιήσει
@@ -17,13 +18,15 @@ export const renderMenu = () => {
         categoryTitle.textContent = categoryName;
         node.append(categoryTitle);
         dishesArray.forEach((element) => {
+            //μετάφραση των ονομάτων και των path των φωτογραφιών
+            const imageSrc = images[element.image];
             const childNode = document.createElement("div");
             childNode.className = "menuItem";
 
             const childItem = `
                 <h3>${element.name}</h3>
                 <h4>${element.category}</h4>
-                <img src="${element.image}" alt="Σπανακοπιτα της γιαγιάς!">
+                <img src="${imageSrc}" alt="${element.name}">
                 <p>${element.description}</p>
                 <p>${element.price}</p>
             `;
